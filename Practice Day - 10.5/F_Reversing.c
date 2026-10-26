@@ -3,25 +3,21 @@
 #include <stdio.h>
 
 int main() {
-  int n, j;
-  long long temp;
+  int n;
   scanf("%d", &n);
   long long arr[n];
+  long long revers[n];
 
   for (int i = 0; i < n; i++) {
     scanf("%ld", &arr[i]);
   }
 
-  for (int i = 0; i <= n / 2; i++) {
-    j = n - 0 - i;
-
-    temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
+  for (int i = n - 1; i >= 0; i--) {
+    revers[n - 1 - i] = arr[i];
   }
 
   for (int i = 0; i < n; i++) {
-    printf("%ld", &arr[i]);
+    printf("%ld ", revers[i]);
   }
 
   return 0;
